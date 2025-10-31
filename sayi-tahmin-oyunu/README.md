@@ -17,3 +17,5 @@ Tahminizi giriniz.39
 Daha küçük bir sayı giriniz.
 Tahminizi giriniz.38
 Tebrikler doğru bildiniz.
+
+
