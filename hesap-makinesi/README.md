@@ -1,5 +1,5 @@
 # Hesap Makinesi
-Basit bir hesap makinesidir. Kullanıcıdan 2 sayı alır ve kullacının yapmak istediği işleme göre bu sayıları hesaplar. Sıfıra bölünme durumuna ("ZeroDivisionError") dikkat eder ve son aşamada sonucu ekrana yazar. 
+Basit bir hesap makinesidir. Kullanıcıdan 2 sayı alır ve kullanıcının yapmak istediği işleme göre bu sayıları hesaplar. Sıfıra bölünme durumuna ("ZeroDivisionError") dikkat eder ve son aşamada sonucu ekrana yazar. 
 
 ## Nasıl çalıştırırlır.
 ```bash
