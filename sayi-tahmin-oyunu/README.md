@@ -1,7 +1,7 @@
 ## Sayı Tahmin Oyunu
 Basit bir sayı tahmin oyunudur. 0-100 aralığında bilgisayar otomatik bir sayı belirler. Kullanıcıdan alınan tahminle karşılaştırır. Doğru ise tebrik eder, değilse tekrar deneme yapmasını ister. 
 
-## Nasıl çalıştırırlır.
+## Nasıl çalıştırılır.
 ```bash
 python app.py
 
