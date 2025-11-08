@@ -1,0 +1,126 @@
+import os
+
+print("Hadi bütçemizi düzenleyelim...")
+
+dosya_adi = "butce.txt"
+
+def dosya_olustur():
+    if not os.path.exists(dosya_adi): #eger butce.txt yoksa oluşturur.
+        with open (dosya_adi, "w", encoding = "utf-8") as dosya:
+            dosya.write("")
+
+def butce_gor():
+    #dosyada butce verısı var mı kontrol eder yoksa kullanıcıdan ıster.
+    if not os.path.exists(dosya_adi) or os.path.getsize(dosya_adi) == 0: 
+        return veri_al()
+
+    with open (dosya_adi, "r", encoding = "utf-8") as dosya: #eğer dosya varsa 
+        ilk_satir = dosya.readline().strip()   #ilk satıra bakar. Bütçe verisini buladıysa yeniden veri almaya yonlendırır.
+        try:
+            return int(ilk_satir)
+        except ValueError:
+            return veri_al()
+
+def veri_al():      #kullanıcıdan bütçesini öğrenip dosyaya yazar.
+    while True:
+        giris = input("Aylık toplam bütçenizi giriniz lütfen: ")
+        try:
+            butce = int(giris)
+            break
+        except ValueError:
+            print("Lütfen geçerli bir sayı giriniz.")
+
+    with open (dosya_adi, "w", encoding = "utf-8") as dosya:
+        dosya.write(str(butce) + "\n")
+        
+    return butce
+
+def gider_ekle():
+    gider = input("Gider ismini yazınız lütfen: ")  # gider ve
+    while True:
+        tutar_giris = int(input("Bu ürünün tutarı ne kadar?: ")) # tutarını kullanıcıdan alıp,
+        try:
+            tutar = int(tutar_giris)
+            break
+        except ValueError:
+            print("Lütfen geçerli bir sayı giriniz.")
+
+    with open (dosya_adi, "a", encoding = "utf-8") as dosya: #dosyadaki verileri silmeden dosyanın sonuna ekler.
+            dosya.write(f"ürün: {gider}, tutar: {tutar}\n")
+    print(f"Gider eklendi: {gider} ({tutar} TL)")
+    
+
+def gider_hesapla():
+    toplam_gider = 0
+    if not os.path.exists(dosya_adi):
+        return 0
+    with open (dosya_adi, "r", encoding = "utf-8") as dosya:
+        for satir in dosya:
+            satir = satir.strip() #baştaki sondaki boşlukları atar.
+            if not satir.startswith("ürün:"):
+                continue
+            if "tutar:" not in satir:
+                continue
+            try:
+                parcala = satir.split(",")
+                tutari_bol = parcala[1].split(":") #aslında liste görünümündeki yapı içindeki tutar verisine ulaşmak için indexe 
+                tutar =int(tutari_bol[1].strip()) #göre veriye ulaşma yapılıyor.
+                toplam_gider += tutar
+            except (IndexError, ValueError):  #hata bulursa devam edebilmesini sağlar. 
+                continue
+        
+        print(f"Bu ayki toplam gideriniz: {toplam_gider}")
+        return toplam_gider
+
+def kalan_paramiz(butce, toplam_gider):
+    try:
+        b = int(butce)
+        c = int(toplam_gider)
+    except (TypeError, ValueError):
+        print("Bütçe veya tutar sayısal değil.")
+        return
+
+    sonuc = b - c   #ilk butceden gıderı cıkartır ve 
+    print(f"Finansal olarak şu an son durumunuz: {sonuc} TL") #son tutarı kullanıcıya gosterır.
+
+
+def menu():
+    dosya_olustur()
+    butce = butce_gor()
+    print("DEBUG:", type(butce), butce)  #çalıştırma sırasında alınan bir hatanın tespiti amacı bu satır kullanılmıştır.
+
+
+    while True:
+        print("""
+        
+        0. Bütçeyi Güncelle
+        1. Gider Ekleyiniz
+        2. Gider Hesaplayınız
+        3. Kalan Paranızı Görün
+        4. Çıkış
+        
+        """)
+
+        islem = input("Yapmak istediğiniz işlemi seçiniz: (1-4): ")
+
+        if islem == "0":
+            butce = veri_al()
+        elif islem == "1":
+            gider_ekle()
+        elif islem == "2":
+            gider_hesapla()
+        elif islem == "3":
+            toplam = gider_hesapla()
+            kalan_paramiz(butce,toplam)
+        elif islem == "4":
+            break
+        else:
+            print("Hatalı işlem. Lütfen yapmak istediğiniz işelmi seçiniz.")
+
+if __name__ == "__main__":
+    menu()
+
+
+
+
+
