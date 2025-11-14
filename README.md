@@ -14,6 +14,11 @@ ve zamanla **yapay zeka projelerine evrilmek** hedeflenmektedir.
 - 🎲 **Zar Atma Oyunu**
 - 🔢 **Sayı Tahmin Oyunu**
 - ➕ **Hesap Makinesi**
+- ✊ **Taş, Kağıt, Makas**
+- ⏳ **Pomodoro Zamanlayıcısı**
+- 🗒️ **Not Defterim**
+- 💰 **Bütçe Takibi**
+- 🏦 **Banka Uygulaması**
 
 ## Not
 Her proje klasörünün içinde:
