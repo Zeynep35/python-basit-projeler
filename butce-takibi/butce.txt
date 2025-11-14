@@ -1,1 +1,3 @@
-1000
+2000
+ürün: bilgisayar, tutar: 1000
+ürün: defter, tutar: 20
