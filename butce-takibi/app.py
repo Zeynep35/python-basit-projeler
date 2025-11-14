@@ -1,6 +1,10 @@
 import os
+from datetime import datetime
 
 print("Hadi bütçemizi düzenleyelim...")
+
+zaman = datetime.now()
+print(zaman)
 
 dosya_adi = "butce.txt"
 
