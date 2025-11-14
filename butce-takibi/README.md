@@ -17,11 +17,11 @@ Aylık toplam bütçenizi giriniz lütfen: > 1000
 DEBUG: <class 'int'> 1000
 
 -----------------------------
-0. Bütçeyi Güncelle
-1. Gider Ekleyiniz
-2. Gider Hesaplayınız
-3. Kalan Paranızı Görün
-4. Çıkış
+1. Bütçeyi Güncelle
+2. Gider Ekleyiniz
+3. Gider Hesaplayınız
+4. Kalan Paranızı Görün
+5. Çıkış
 -----------------------------
 
 Yapmak istediğiniz işlemi seçiniz: > 1
