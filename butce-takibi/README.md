@@ -13,7 +13,7 @@ python app.py
 # Örnek Çıktı
 
 Hadi bütçemizi düzenleyelim...
-Aylık toplam bütçenizi giriniz lütfen: > 1000
+2025-11-14 13:37:43.294669
 DEBUG: <class 'int'> 1000
 
 -----------------------------
@@ -28,6 +28,8 @@ Yapmak istediğiniz işlemi seçiniz: > 1
 Gider ismini yazınız lütfen: > elma
 Bu ürünün tutarı ne kadar?: > 20
 Gider eklendi: elma (20 TL)
+
+<img width="337" height="242" alt="Image" src="https://github.com/user-attachments/assets/c0b93651-239b-41de-bee9-c7ebd8686c1e" />
 
 ## Katkı
 Bu proje öğrenme amaçlıdır. Geliştirmek veya katkıda bulunmak isteyenler `pull request` gönderebilir.
